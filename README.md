@@ -5,7 +5,7 @@ The Quick Draw Dataset is a collection of 50 million drawings across [345 catego
 
 We're sharing them here for developers, researchers, and artists to explore, study, and learn from. If you create something with this dataset, please let us know [by e-mail](mailto:quickdraw-support@google.com) or at [A.I. Experiments](https://aiexperiments.withgoogle.com/submit).
 
-We have also released a tutorial and model for training your own drawing classifier on [tensorflow.org](https://www.tensorflow.org/tutorials/sequences/recurrent_quickdraw).
+We have also released a tutorial and model for training your own drawing classifier on [tensorflow.org](https://github.com/tensorflow/docs/blob/master/site/en/r1/tutorials/sequences/recurrent_quickdraw.md).
 
 Please keep in mind that while this collection of drawings was individually moderated, it may still contain inappropriate content.
 
@@ -88,13 +88,14 @@ There is also an example in [examples/nodejs/binary-parser.js](examples/nodejs/b
 All the simplified drawings have been rendered into a 28x28 grayscale bitmap in numpy `.npy` format. The files can be loaded with [`np.load()`](https://docs.scipy.org/doc/numpy-1.12.0/reference/generated/numpy.load.html). These images were generated from the simplified data, but are aligned to the center of the drawing's bounding box rather than the top-left corner. [See here for code snippet used for generation](https://github.com/googlecreativelab/quickdraw-dataset/issues/19#issuecomment-402247262).
 
 ## Get the data
-The dataset is available on Google Cloud Storage as [`ndjson`](http://ndjson.org/) files seperated by category. See the list of files in [Cloud Console](https://console.cloud.google.com/storage/quickdraw_dataset/), or read more about [accessing public datasets](https://cloud.google.com/storage/docs/access-public-data) using other methods. As an example, to easily download all simplified drawings, one way is to run the command `gsutil -m cp 'gs://quickdraw_dataset/full/simplified/*.ndjson' .` 
+The dataset is available on Google Cloud Storage as [`ndjson`](http://ndjson.org/) files seperated by category. See the list of files in [Cloud 
+](https://console.cloud.google.com/storage/browser/quickdraw_dataset/), or read more about [accessing public datasets](https://cloud.google.com/storage/docs/access-public-data) using other methods. As an example, to easily download all simplified drawings, one way is to run the command `gsutil -m cp 'gs://quickdraw_dataset/full/simplified/*.ndjson' .` 
 
 #### Full dataset seperated by categories
-- [Raw files](https://console.cloud.google.com/storage/quickdraw_dataset/full/raw) (`.ndjson`)
-- [Simplified drawings files](https://console.cloud.google.com/storage/quickdraw_dataset/full/simplified) (`.ndjson`)
-- [Binary files](https://console.cloud.google.com/storage/quickdraw_dataset/full/binary) (`.bin`)
-- [Numpy bitmap files](https://console.cloud.google.com/storage/quickdraw_dataset/full/numpy_bitmap) (`.npy`)
+- [Raw files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/raw) (`.ndjson`)
+- [Simplified drawings files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified) (`.ndjson`)
+- [Binary files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/binary) (`.bin`)
+- [Numpy bitmap files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/numpy_bitmap) (`.npy`)
 
 #### Sketch-RNN QuickDraw Dataset
 This data is also used for training the [Sketch-RNN](https://arxiv.org/abs/1704.03477) model.  An open source, TensorFlow implementation of this model is available in the [Magenta Project](https://magenta.tensorflow.org/sketch_rnn), (link to GitHub [repo](https://github.com/tensorflow/magenta/tree/master/magenta/models/sketch_rnn)).  You can also read more about this model in this Google Research [blog post](https://research.googleblog.com/2017/04/teaching-machines-to-draw.html).  The data is stored in compressed `.npz` files, in a format suitable for inputs into a recurrent neural network.
@@ -103,7 +104,7 @@ In this dataset, 75K samples (70K Training, 2.5K Validation, 2.5K Test) has been
 
 We have also provided the full data for each category, if you want to use more than 70K training examples.  These are stored with the `.full.npz` extensions.
 
-- [Numpy .npz files](https://console.cloud.google.com/storage/quickdraw_dataset/sketchrnn)
+- [Numpy .npz files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/sketchrnn)
 
 *Note:* For Python3, loading the `npz` files using `np.load(data_filepath, encoding='latin1', allow_pickle=True)`
 
@@ -145,7 +146,7 @@ Dr. Ernesto Diaz-Aviles](http://ernesto.diazaviles.com/)
 - [A Novel Sketch Recognition Model based on Convolutional Neural Networks](https://ieeexplore.ieee.org/document/9152911) by [Abdullah Talha Kabakus](https://www.linkedin.com/in/talhakabakus), 2nd International Congress on Human-Computer Interaction, Optimization and Robotic Applications, pp. 101-106, 2020.
 
 *Guides & Tutorials*
-- [TensorFlow tutorial for drawing classification](https://www.tensorflow.org/tutorials/sequences/recurrent_quickdraw)
+- [TensorFlow tutorial for drawing classification](https://github.com/tensorflow/docs/blob/master/site/en/r1/tutorials/sequences/recurrent_quickdraw.md)
 - [Train a model in tf.keras with Colab, and run it in the browser with TensorFlow.js](https://medium.com/tensorflow/train-on-google-colab-and-run-on-the-browser-a-case-study-8a45f9b1474e) by Zaid Alyafeai
 
 *Code and tools*
@@ -162,6 +163,7 @@ Krishna Sri Somepalli](https://krishnasrisomepalli.github.io/)
 - [RealTime QuickDraw](https://github.com/akshaybahadur21/QuickDraw) by [Akshay Bahadur](http://akshaybahadur.com/)
 - [DataFlow processing](https://github.com/gxercavins/dataflow-samples/tree/master/quick-draw) by Guillem Xercavins 
 - [QuickDrawGH Rhino Plugin](https://www.food4rhino.com/app/quickdrawgh) by [James Dalessandro](https://github.com/DalessandroJ)
+- [QuickDrawBattle](https://andri.io/quickdrawbattle/) by [Andri Soone](https://github.com/ndri)
 
 
 ## Changes
